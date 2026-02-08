@@ -18,7 +18,7 @@ class _FoodMenuScreenState extends State<FoodMenuScreen> {
 
   int getCartCount(FoodState state) {
     if (state is FoodLoaded) {
-      return state.items.fold(0, (total, item) => total + item.quantity);
+      return state.items.where((item) => item.quantity > 0).length;
     }
     return 0;
   }
