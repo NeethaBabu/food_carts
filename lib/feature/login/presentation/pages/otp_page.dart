@@ -122,12 +122,6 @@ class _OtpPageState extends State<OtpPage> {
 
               const SizedBox(height: 16),
 
-              TextButton(
-                onPressed: () {
-                  // Optional: Resend OTP
-                },
-                child: const Text("Resend OTP"),
-              ),
             ],
           ),
         ),
