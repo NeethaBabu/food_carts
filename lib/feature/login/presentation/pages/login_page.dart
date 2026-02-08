@@ -34,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
                 context: context,
                 barrierDismissible: false,
                 builder: (_) =>
-                    const Center(child: CircularProgressIndicator()),
+                    const Center(child: CircularProgressIndicator())
               );
             }
             if (state is OtpSent) {

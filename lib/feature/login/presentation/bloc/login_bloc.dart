@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:meta/meta.dart';
 
 import '../../data/model/user_model.dart';
@@ -17,8 +18,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<GoogleLoginRequested>(_onGoogleLogin);
     on<PhoneLoginRequested>(_onPhoneLogin);
     on<OtpSubmitted>(_onOtpSubmit);
+    on<OtpCodeSent>((event, emit) {
+      emit(OtpSent(event.verificationId));
+    });
     on<LogoutRequested>((event, emit) async {
       await FirebaseAuth.instance.signOut();
+      // await GoogleSignIn().signOut();
       emit(AuthInitial());
     });
   }
@@ -50,7 +55,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       await repository.verifyPhone(
         phoneNumber: event.phoneNumber,
         onCodeSent: (verificationId) {
-          emit(OtpSent(verificationId));
+          add(OtpCodeSent(verificationId));
         },
       );
     } catch (e) {

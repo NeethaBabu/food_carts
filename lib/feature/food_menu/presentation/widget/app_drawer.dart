@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/route/app_routes.dart';
 import '../../../login/presentation/bloc/login_bloc.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -66,9 +67,18 @@ class AppDrawer extends StatelessWidget {
               ListTile(
                 leading: const Icon(Icons.logout, color: Colors.grey),
                 title: const Text('Log out'),
+                // onTap: () {
+                //   Navigator.pop(context);
+                //   context.read<AuthBloc>().add(LogoutRequested());
+                // },
                 onTap: () {
                   Navigator.pop(context);
                   context.read<AuthBloc>().add(LogoutRequested());
+                  Navigator.of(context, rootNavigator: true)
+                      .pushNamedAndRemoveUntil(
+                    AppRoutes.login,
+                        (route) => false,
+                  );
                 },
               ),
             ],

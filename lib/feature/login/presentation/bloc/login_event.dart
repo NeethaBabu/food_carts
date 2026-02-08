@@ -18,3 +18,9 @@ class OtpSubmitted extends AuthEvent {
 }
 
 class LogoutRequested extends AuthEvent {}
+
+class OtpCodeSent extends AuthEvent {
+  final String verificationId;
+  OtpCodeSent(this.verificationId);
+}
+
