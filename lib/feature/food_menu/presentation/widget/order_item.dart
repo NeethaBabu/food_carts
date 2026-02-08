@@ -1,17 +1,16 @@
 import 'package:dish_categories_app/feature/food_menu/presentation/widget/quality_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../data/model/food_model.dart';
-import '../pages/food_menu.dart';
+import '../bloc/food_bloc.dart';
 
 class OrderItem extends StatelessWidget {
   final FoodModel food;
-  final VoidCallback onQuantityChanged;
 
   const OrderItem({
     super.key,
     required this.food,
-    required this.onQuantityChanged,
   });
 
   @override
@@ -64,21 +63,31 @@ class OrderItem extends StatelessWidget {
                     icon: Icons.remove,
                     onPressed: () {
                       if (food.quantity > 0) {
-                        food.quantity--;
-                        onQuantityChanged();
+                        context.read<FoodBloc>().add(
+                          UpdateFoodQuantity(
+                            foodId: food.id,
+                            quantity: food.quantity - 1,
+                          ),
+                        );
                       }
                     },
                   ),
+
                   const SizedBox(width: 8),
                   Text("${food.quantity}"),
                   const SizedBox(width: 8),
                   QuantityButton(
                     icon: Icons.add,
                     onPressed: () {
-                      food.quantity++;
-                      onQuantityChanged();
+                      context.read<FoodBloc>().add(
+                        UpdateFoodQuantity(
+                          foodId: food.id,
+                          quantity: food.quantity + 1,
+                        ),
+                      );
                     },
                   ),
+
                 ],
               ),
               const SizedBox(height: 8),

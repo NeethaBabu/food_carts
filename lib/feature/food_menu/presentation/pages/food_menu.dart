@@ -66,9 +66,7 @@ class _FoodMenuScreenState extends State<FoodMenuScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (_) => OrderSummaryScreen(
-                              selectedItems: selectedItems,
-                            ),
+                            builder: (_) => OrderSummaryScreen(),
                           ),
                         );
                       },

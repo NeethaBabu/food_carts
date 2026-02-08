@@ -9,7 +9,7 @@ class FoodLoading extends FoodState {}
 class FoodLoaded extends FoodState {
   final List<FoodModel> items;
 
-  FoodLoaded(this.items);
+  FoodLoaded({required this.items});
 }
 
 class FoodError extends FoodState {

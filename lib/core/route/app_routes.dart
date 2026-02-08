@@ -20,9 +20,7 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const FoodMenuScreen());
 
       case cart:
-        return MaterialPageRoute(
-          builder: (_) => const OrderSummaryScreen(selectedItems: []),
-        );
+        return MaterialPageRoute(builder: (_) => const OrderSummaryScreen());
 
       case otp:
         final verificationId = settings.arguments as String;
