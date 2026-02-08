@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "811980426793",
+    "project_id": "foodcarts-3b27a",
+    "storage_bucket": "foodcarts-3b27a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:811980426793:android:85c58e8fb2665a73d79638",
+        "android_client_info": {
+          "package_name": "com.example.dish_categories_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "811980426793-j82eurukjpbft32b57q1c9h0pvh9pgjh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dish_categories_app",
+            "certificate_hash": "f8d2da905b902019ca276d7d120f383b4f2ecd06"
+          }
+        },
+        {
+          "client_id": "811980426793-j0827pf6fii4koc7qbnfd6rbgev0vf1n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCG8OcQE1vOshFrLHUaM3Xcu9UuhZEFfbU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "811980426793-j0827pf6fii4koc7qbnfd6rbgev0vf1n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "811980426793-beo5vqjolq2hig1o8gfpqkbn1kgho1r0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.dishCategoriesApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
