@@ -100,7 +100,7 @@ class _OtpPageState extends State<OtpPage> {
                 ),
               ),
 
-              const SizedBox(height: 24),
+              const SizedBox(height: 30),
 
               SizedBox(
                 width: double.infinity,
